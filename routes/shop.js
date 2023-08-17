@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const router = express.Router();
-const {getProducts,getProfile} = require('../controllers/shop/labours');
+const {getProducts,getProfile, getAddToCart} = require('../controllers/shop/labours');
 const { getContractors } = require('../controllers/shop/contractors');
 
 
@@ -11,6 +11,8 @@ router.get('/labours',getProducts);
 
 // router for getting the contractors
 router.get('/contractors',getContractors)
+
+router.get('/addtocart',getAddToCart)
 
 
 module.exports=router;

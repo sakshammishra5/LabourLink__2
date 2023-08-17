@@ -18,7 +18,16 @@ const userSchema = new Schema({
     isContractor:{
         type:Boolean,
         default:false
-    }
+    },
+    cart: [
+        {
+            id: {
+                type: Schema.Types.ObjectId,
+                ref: 'Products'
+            },
+            quantity: Number
+        }
+    ]
 });
 
 module.exports = mongoose.model('Users', userSchema);
